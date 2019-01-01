@@ -26,12 +26,18 @@ h1{
 #size-title{
     float: left;
     margin-top: 0px;
-}
 
+
+}
+#size-title,#size,#start,#restart{
+    float: left;
+
+}
 #size{
     width: 50px;
     margin-left: 10px;
     border-radius: 3px;
+
 }
 
 #canvas{

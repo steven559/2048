@@ -1,7 +1,7 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var Input = document.getElementById('size');
-var changeSize = document.getElementById('change-size');
+
 var score = document.getElementById('score');
 var score2 = 0;
 var size = 4;
@@ -9,9 +9,20 @@ var width = canvas.width / size - 6;
 var tab = [];
 var fontSize;
 var verifie = false;
-demarre();
+var but=document.getElementById('start');
+var button=document.getElementById('restart');
+button.addEventListener("click",function () {
+    location.reload();
+});
+but.addEventListener('click',function () {
+    demarre();
+    if(this.click){
+        but.disabled=true;
+    }
+});
 
-changeSize.onclick = function () {
+
+but.onclick = function () {
     if (Input.value >= 2 && Input.value <= 20) {
         size = Input.value;
         width = canvas.width / size - 6;
@@ -85,11 +96,13 @@ document.onkeydown = function (event) {
     }
 };
 
+
 function demarre() {
     createCase();
     dessineCase();
     newCase();
     newCase();
+
 }
 
 function finishGame() {
